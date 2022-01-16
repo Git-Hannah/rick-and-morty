@@ -1,11 +1,12 @@
-import "./App.css";
-import Fetch from "./fetch";
-//import useFetch from "react-fetch-hook";
+import React, { useState, useEffect} from 'react';
+//import useFetch from "./useFetch";
+import Card from "./components/Card/index.js";
 
 function App() {
   return (
     <div>
-      <Fetch></Fetch>
+      <Card></Card>
+
     </div>
   );
 }
