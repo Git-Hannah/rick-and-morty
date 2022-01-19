@@ -1,29 +1,12 @@
-import React, { useState, useEffect } from "react";
-import useFetch from "../../useFetch";
-//import styled from '@emotion/styled';
+import React from "react";
 
-const Card = () => {
-  //Fetch
-  const data = useFetch("https://rickandmortyapi.com/api/character");
-  const [characters, setCharacters] = useState([]);
-  useEffect(() => {
-    setCharacters(data ? data.results : []);
-  }, [data]);
-
+const Card = ({ image, name }) => {
   return (
     <div>
-      {characters
-        ? characters.map((character) => {
-            return (
-              <div key={character.id}>
-                <figure>
-                  <img src={character.image} alt={character.name} />
-                </figure>
-                <h2>{character.name}</h2>
-              </div>
-            );
-          })
-        : []}
+      <figure>
+        <img src={image} alt={name} />
+      </figure>
+      <h2>{name}</h2>
     </div>
   );
 };
